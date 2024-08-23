@@ -13,7 +13,7 @@ set "max_retries=5"
 
 :retry
 :: Run ffmpeg command with the provided HTTP link and stream key
-ffmpeg -i "%http_link%" -c copy -f flv "rtmp://a.rtmp.youtube.com/live2/%stream_key%"
+ffmpeg -i "%http_link%" -c:v copy -c:a aac -b:a 128k -ar 48000 -f flv "rtmp://a.rtmp.youtube.com/live2/%stream_key%"
 
 :: Increment retry counter
 set /a retry_count+=1
