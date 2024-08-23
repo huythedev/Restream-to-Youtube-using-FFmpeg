@@ -1,0 +1,2 @@
+batchFileDirectory=Path\to\directory
+batchFileName=restream.bat
